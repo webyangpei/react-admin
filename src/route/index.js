@@ -1,0 +1,1 @@
+import { Swtich, Route, BrowserRouter, HashHistory, Link  } from 'react-router-dom';

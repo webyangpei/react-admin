@@ -1,65 +1,33 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
+import { render } from 'react-dom';
+import React, { useState } from 'react';
+import { ConfigProvider, DatePicker, message } from 'antd';
+// import global scss
+import './styles/index.scss';
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import zhCN from 'antd/es/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.css';
 import './index.css';
 
-class Square extends React.Component {
-  render() {
-    return (
-      <button className="square">
-      {/* TODO */}
-      </button>
-  );
+moment.locale('zh-cn');
+
+const App = () => {
+  const [ date, setDate ] = useState(null);
+  const handleChange = value => {
+    message.info(`您选择的日期是: ${value ? value.format('YYYY年MM月DD日') : '未选择'}`);
+    setDate(value);
   }
+  return (
+    <ConfigProvider locale={zhCN}>
+      <div style={{ width: 400, margin: '100px auto' }}>
+        <DatePicker onChange={handleChange} />
+        <div style={{ marginTop: 16 }}>
+          当前日期：{date ? date.format('YYYY年MM月DD日') : '未选择'}
+        </div>
+      </div>
+    </ConfigProvider>
+  )
 }
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return <Square />;
-  }
-
-  render() {
-    const status = 'Next player: 33444';
-
-    return (
-      <div>
-      <div className="status">{status}</div>
-      <div className="board-row">
-      {this.renderSquare(0)}
-    {this.renderSquare(1)}
-    {this.renderSquare(2)}
-  </div>
-    <div className="board-row">
-      {this.renderSquare(3)}
-    {this.renderSquare(4)}
-    {this.renderSquare(5)}
-  </div>
-    <div className="board-row">
-      {this.renderSquare(6)}
-    {this.renderSquare(7)}
-    {this.renderSquare(8)}
-  </div>
-    </div>
-  );
-  }
-}
-
-class Game extends React.Component {
-  render() {
-    return (
-      <div className="game">
-      <div className="game-board">
-      <Board />
-      </div>
-      <div className="game-info">
-      <div>{/* status */}</div>
-      <ol>{/* TODO */}</ol>
-      </div>
-      </div>
-  );
-  }
-}
-
-ReactDOM.render(
-<Game />,
-  document.getElementById('root')
-);
+render(<App/>, document.getElementById('root'))
