@@ -2,15 +2,22 @@
   "name": "react-admin",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "react-app-rewired": "./bin/index.js"
+  },
   "dependencies": {
+    "antd": "^4.5.2",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "browserslist": {

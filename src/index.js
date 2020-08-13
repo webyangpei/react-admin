@@ -1,65 +1,31 @@
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import React from 'react';
-import './index.css';
+import { Layout } from 'antd';
+import RouterView from "./route";
+// import global scss
+import './styles/index.scss';
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+// import zhCN from 'antd/es/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.css';
+const { Header, Sider, Content } = Layout;
 
-class Square extends React.Component {
-  render() {
-    return (
-      <button className="square">
-      {/* TODO */}
-      </button>
-  );
-  }
+
+moment.locale('zh-cn');
+
+const App = () => {
+  return (
+    <Layout>
+      <Sider>Sider1</Sider>
+      <Layout>
+        <Header>Header</Header>
+        <Content style={{ height: 'calc(100vh - 64px)' }}>
+          <RouterView/>
+        </Content>
+      </Layout>
+    </Layout>
+  )
 }
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return <Square />;
-  }
-
-  render() {
-    const status = 'Next player: X';
-
-    return (
-      <div>
-      <div className="status">{status}</div>
-      <div className="board-row">
-      {this.renderSquare(0)}
-    {this.renderSquare(1)}
-    {this.renderSquare(2)}
-  </div>
-    <div className="board-row">
-      {this.renderSquare(3)}
-    {this.renderSquare(4)}
-    {this.renderSquare(5)}
-  </div>
-    <div className="board-row">
-      {this.renderSquare(6)}
-    {this.renderSquare(7)}
-    {this.renderSquare(8)}
-  </div>
-    </div>
-  );
-  }
-}
-
-class Game extends React.Component {
-  render() {
-    return (
-      <div className="game">
-      <div className="game-board">
-      <Board />
-      </div>
-      <div className="game-info">
-      <div>{/* status */}</div>
-      <ol>{/* TODO */}</ol>
-      </div>
-      </div>
-  );
-  }
-}
-
-ReactDOM.render(
-<Game />,
-  document.getElementById('root')
-);
+render(<App/>, document.getElementById('root'))
