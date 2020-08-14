@@ -1,6 +1,6 @@
 import { render } from 'react-dom';
 import React from 'react';
-import LayoutInit from './views/layout'
+import LayoutInit from './views/Layout/layout'
 // import global scss
 import './styles/index.scss';
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文

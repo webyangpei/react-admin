@@ -1,4 +1,5 @@
 import React from 'react';
+import './dashboard.scss';
 
 class Dashboard extends React.Component {
   constructor(props, state) {
@@ -6,14 +7,13 @@ class Dashboard extends React.Component {
     state = {}
   }
   UNSAFE_componentWillMount() {
-    this.setState({ a: 1 })
+    this.setState({ count: 'this is a dashboard page!' })
   }
 
   render() {
     return (
       <div>
-        this is a dashboard page!
-        <div>{ this.state.a }</div>
+        <div className="main-content">{ this.state.count }</div>
       </div>
     )
   }
