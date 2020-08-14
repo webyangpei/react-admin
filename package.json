@@ -6,13 +6,15 @@
     "react-app-rewired": "./bin/index.js"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
     "antd": "^4.5.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
