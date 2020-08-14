@@ -1,10 +1,11 @@
+import Dashboard from "../views/dashboard"
 const menu = [
   {
     name: 'dashboard',
     path: '/',
     icon: 'setting',
     title: '首页',
-    component: 'Dashboard'
+    component: Dashboard,
   },
   {
     name: 'login',

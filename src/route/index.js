@@ -9,7 +9,7 @@ const RouterView = (props) => {
         key={route.path}
         path={route.path}
         exact
-        render={ () =>  route.component}
+        component={route.component}
       >
       </Route>
     )
