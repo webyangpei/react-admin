@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Breadcrumb, Layout } from 'antd';
 import RouterView from "../../route";
 import Sidebar from './Sidebar'
+import Logo from './Logo'
 const { Header, Sider, Content } = Layout;
 
 
@@ -14,6 +15,7 @@ const LayoutInit = () => {
   return (
     <Layout>
       <Sider width={200} className="site-layout-background">
+        <Logo/>
         <Sidebar/>
       </Sider>
       <Layout>
