@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Logo = () => {
   let imgStyle = {
@@ -7,7 +7,7 @@ const Logo = () => {
     backgroundColor: '#fff'
   }
   return (
-    <img style={imgStyle} src={require('../../assets/img/icon-no-shop-logo.png')}/>
+    <img alt="" style={imgStyle} src={require('../../assets/img/icon-no-shop-logo.png')}/>
   )
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import LayoutInit from './views/Layout/layout'
 import Login from "./views/login";
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <Switch>
         <Route>
           <LayoutInit/>
@@ -16,7 +16,7 @@ const App = () => {
         <Route path='/login' component={Login} />
         {/*<Route path='/404' component={404} />*/}
       </Switch>
-    </Router>
+    </HashRouter>
   )
 }
 

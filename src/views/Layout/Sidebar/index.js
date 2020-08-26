@@ -15,7 +15,7 @@ const Sidebar = () => {
           {route.children.map((child) => {
             return (
               <Menu.Item key={child.path}>
-                <Link to={child.path} replace>
+                <Link to={child.path}>
                   <span>{child.title}</span>
                 </Link>
             </Menu.Item>)

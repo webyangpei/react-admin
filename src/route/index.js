@@ -4,14 +4,19 @@ import menu from './config'
 
 const RouterView = (props) => {
   const createMenu = (route) => {
-    return (
-      <Route
-        key={route.path}
-        path={route.path}
-        exact
-        render={props => (<route.component { ...props}/>)}
-      />
-    )
+    if(route && route.children && route.children.length) {
+      return route.children.map(createMenu)
+    } else {
+      return (
+        <Route
+          key={route.path}
+          path={route.path}
+          exact
+          render={props => (<route.component { ...props}/>)}
+        />
+      )
+    }
+
   }
   return (
     <HashRouter>

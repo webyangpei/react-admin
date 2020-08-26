@@ -11,10 +11,9 @@ const menu = [
   },
   {
     name: 'goods',
-    path: '/goods/goods-list',
+    path: '/goods',
     icon: 'LaptopOutlined',
     title: '商品',
-    component: goodsList,
     children: [
       {
         name: 'goodsList',
@@ -27,10 +26,9 @@ const menu = [
   },
   {
     name: 'order',
-    path: '/order/order-list',
+    path: '/order',
     icon: 'UserOutlined',
     title: '订单',
-    component: OrderList,
     children: [
       {
         name: 'orderList',
