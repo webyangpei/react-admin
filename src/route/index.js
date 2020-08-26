@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect, BrowserRouter  } from 'react-router-dom';
+import { Switch, Route, Redirect, HashRouter  } from 'react-router-dom';
 import menu from './config'
 
 const RouterView = (props) => {
@@ -9,18 +9,17 @@ const RouterView = (props) => {
         key={route.path}
         path={route.path}
         exact
-        component={route.component}
-      >
-      </Route>
+        render={props => (<route.component { ...props}/>)}
+      />
     )
   }
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         {menu.map(createMenu)}
-        <Route render={() => <Redirect to='/404'></Redirect> }></Route>
+        <Route render={() => <Redirect to='/404'/> }/>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

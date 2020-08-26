@@ -1,5 +1,5 @@
 import Dashboard from "../views/dashboard"
-import Login from "../views/login"
+import OrderList from "../views/order/order-list"
 import goodsList from "../views/goods/goods-list";
 const menu = [
   {
@@ -22,6 +22,22 @@ const menu = [
         icon: 'LaptopOutlined',
         title: '商品列表',
         component: goodsList
+      }
+    ]
+  },
+  {
+    name: 'order',
+    path: '/order/order-list',
+    icon: 'UserOutlined',
+    title: '订单',
+    component: OrderList,
+    children: [
+      {
+        name: 'orderList',
+        path: '/order/order-list',
+        icon: 'LaptopOutlined',
+        title: '订单列表',
+        component: OrderList
       }
     ]
   }
