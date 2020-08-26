@@ -22,7 +22,7 @@ const LayoutInit = () => {
       </Sider>
       <Layout>
         <Header style={{ background: '#fff' }}>
-          <EnBreadcrumb />
+          <EnBreadcrumb menu={menu} />
         </Header>
         <Content style={{ height: 'calc(100vh - 64px)' }}>
           <RouterView/>

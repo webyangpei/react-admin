@@ -9,6 +9,7 @@ const EnBreadcrumb = (props) => {
       <Breadcrumb.Item>
         <Link to='/'>首页</Link>
       </Breadcrumb.Item>
+      {/*props.menu.*/}
       <Breadcrumb.Item>List</Breadcrumb.Item>
       <Breadcrumb.Item>App</Breadcrumb.Item>
     </Breadcrumb>
