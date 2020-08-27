@@ -1,13 +1,10 @@
-import Dashboard from "../views/dashboard"
-import OrderList from "../views/order/order-list"
-import goodsList from "../views/goods/goods-list";
 const menu = [
   {
     name: 'dashboard',
     path: '/index',
     icon: 'UserOutlined',
     title: '首页',
-    component: Dashboard
+    component: require('../views/dashboard').default
   },
   {
     name: 'goods',
@@ -20,7 +17,7 @@ const menu = [
         path: '/goods/goods-list',
         icon: 'LaptopOutlined',
         title: '商品列表',
-        component: goodsList
+        component: require('../views/goods/goods-list').default
       }
     ]
   },
@@ -35,7 +32,7 @@ const menu = [
         path: '/order/order-list',
         icon: 'LaptopOutlined',
         title: '订单列表',
-        component: OrderList
+        component: require('../views/order/order-list').default
       }
     ]
   }

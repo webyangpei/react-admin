@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from 'antd';
 import menu from '../../../route/config'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const { SubMenu } = Menu;
 const Sidebar = () => {
   const createMenuLink = (route) => {
@@ -15,9 +15,9 @@ const Sidebar = () => {
           {route.children.map((child) => {
             return (
               <Menu.Item key={child.path}>
-                <Link to={child.path}>
+                <NavLink to={child.path}>
                   <span>{child.title}</span>
-                </Link>
+                </NavLink>
             </Menu.Item>)
           })}
         </SubMenu>
@@ -25,9 +25,9 @@ const Sidebar = () => {
     } else {
       return (
         <Menu.Item key={route.path}>
-          <Link to={route.path}>
+          <NavLink to={route.path}>
             <span>{route.title}</span>
-          </Link>
+          </NavLink>
         </Menu.Item>
       )
     }

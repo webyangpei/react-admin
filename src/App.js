@@ -3,13 +3,13 @@ import LayoutInit from './views/Layout/layout'
 import Login from "./views/login";
 import View404 from "./views/View404";
 import View500 from "./views/View500";
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Switch>
         <Route path='/' exact render={() => <Redirect to='/index' />} />
         <Route path='/login' component={Login} />
@@ -19,7 +19,7 @@ const App = () => {
           <LayoutInit/>
         </Route>
       </Switch>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
