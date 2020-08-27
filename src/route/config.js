@@ -4,7 +4,7 @@ import goodsList from "../views/goods/goods-list";
 const menu = [
   {
     name: 'dashboard',
-    path: '/',
+    path: '/index',
     icon: 'UserOutlined',
     title: '首页',
     component: Dashboard
