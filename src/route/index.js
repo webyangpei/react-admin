@@ -12,7 +12,9 @@ const RouterView = (props) => {
           exact
           key={route.path}
           path={route.path}
-          render={props => (<route.component { ...props}/>)}
+          render={props => {
+            return( route &&( route.redirect ? (<Redirect to={route.redirect}/>) : <route.component { ...props} routes={route} />))
+          }}
         />
       )
     }

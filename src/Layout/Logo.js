@@ -7,7 +7,7 @@ const Logo = () => {
     backgroundColor: '#fff'
   }
   return (
-    <img alt="" style={imgStyle} src={require('../../assets/img/icon-no-shop-logo.png')}/>
+    <img alt="" style={imgStyle} src={require('../assets/img/icon-no-shop-logo.png')}/>
   )
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Menu } from 'antd';
-import menu from '../../../route/config'
+import menu from '../../route/config'
 import { NavLink } from 'react-router-dom';
 const { SubMenu } = Menu;
 const Sidebar = () => {
-  const createMenuLink = (route) => {
+   const createMenuLink = (route) => {
     if(route.children && route.children.length) {
       return (
         <SubMenu

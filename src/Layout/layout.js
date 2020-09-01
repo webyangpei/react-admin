@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Layout } from 'antd';
-import RouterView from "../../route";
+import RouterView from "../route";
 import Sidebar from './Sidebar'
-import EnBreadcrumb from '../../components/EnBreadcrumb';
+import EnBreadcrumb from '../components/EnBreadcrumb';
 import Logo from './Logo'
-import menu from '../../route/config'
+import menu from '../route/config'
 const { Header, Sider, Content } = Layout;
 
 
 const LayoutInit = () => {
-  const [ a ] = useState(1);
+  const [ menuData, setMenuData ] = useState([]);
 
   useEffect(() => {
-    document.title = `You clicked ${a} times`;
-  });
+     fetch('/api/menu')
+       .then(response => response.json())
+       .then(response => {
+         setMenuData(response.data || []);
+       })
+  },[]);
   return (
     <Layout>
       <Sider width={200} className="site-layout-background">
-        <Logo/>
-        <Sidebar/>
+        <Logo />
+        <Sidebar trigger={null} collapsible />
       </Sider>
       <Layout>
         <Header style={{ background: '#fff' }}>
           <EnBreadcrumb menu={menu}/>
         </Header>
         <Content style={{ height: 'calc(100vh - 64px)' }}>
-          <RouterView/>
+          <RouterView menuData={menuData}/>
         </Content>
       </Layout>
     </Layout>
