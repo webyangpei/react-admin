@@ -35,9 +35,8 @@ const Sidebar = () => {
    return(
      <Menu
        mode="inline"
-       style={{ height: '100%', borderRight: 0 }}
+       style={{ height: 'calc(100% - 64px)', borderRight: 0 }}
        defaultSelectedKeys={['/']}
-       // defaultOpenKeys={['sub1']}
      >
        {menu.map(createMenuLink)}
      </Menu>
