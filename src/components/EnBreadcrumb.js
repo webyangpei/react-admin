@@ -7,7 +7,7 @@ const EnBreadcrumb = (props) => {
   return (
     <Breadcrumb style={{ margin: '16px 0' }}>
       <Breadcrumb.Item>
-        <NavLink to='/'>首页</NavLink>
+        <NavLink to='/index'>首页</NavLink>
       </Breadcrumb.Item>
       {/*props.menu.*/}
       <Breadcrumb.Item>List</Breadcrumb.Item>
