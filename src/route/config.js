@@ -4,11 +4,15 @@ const menu = [
     path: '/index',
     icon: 'UserOutlined',
     title: '首页',
+    hideChildrenInMenu: false,
+    hideInMenu: false,
+    authority: false, // 用来验证当前路由的权限
     component: require('../views/dashboard').default
   },
   {
     name: 'goods',
     path: '/goods',
+    redirect: '/goods/goods-list',
     icon: 'LaptopOutlined',
     title: '商品',
     children: [
@@ -24,6 +28,7 @@ const menu = [
   {
     name: 'order',
     path: '/order',
+    redirect: '/order/order-list',
     icon: 'UserOutlined',
     title: '订单',
     children: [
