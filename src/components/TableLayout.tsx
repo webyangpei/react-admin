@@ -6,7 +6,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a>{text}</a>,
+    render: (text:any) => <a>{text}</a>,
   },
   {
     title: 'Age',
@@ -22,9 +22,9 @@ const columns = [
     title: 'Tags',
     key: 'tags',
     dataIndex: 'tags',
-    render: tags => (
+    render: (tags:any) => (
       <>
-        {tags.map(tag => {
+        {tags.map((tag:any) => {
           let color = tag.length > 5 ? 'geekblue' : 'green';
           if (tag === 'loser') {
             color = 'volcano';
@@ -41,7 +41,7 @@ const columns = [
   {
     title: 'Action',
     key: 'action',
-    render: (text, record) => (
+    render: (text:any, record:any) => (
       <Space size="middle">
         <a>Invite {record.name}</a>
         <a>Delete</a>
