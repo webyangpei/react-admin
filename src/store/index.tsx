@@ -1,11 +1,12 @@
 import { createStore } from 'redux';
+// @ts-ignore
 const store = createStore(fn);
 
 const state = store.getState();
 
 
 
-const ADD_TODO = (payload) => {
+const ADD_TODO = (payload:any) => {
   return {
     type: 'ADD_TODO',
     payload

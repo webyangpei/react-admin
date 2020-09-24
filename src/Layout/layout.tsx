@@ -20,9 +20,9 @@ const LayoutInit = () => {
   },[]);
   return (
     <Layout>
-      <Sider width={200} className="site-layout-background">
+      <Sider width={200} collapsible className="site-layout-background">
         <Logo />
-        <Sidebar trigger={null} collapsible />
+        <Sidebar/>
       </Sider>
       <Layout>
         <Header style={{ background: '#fff' }}>

@@ -4,7 +4,7 @@ import menu from '../../route/config'
 import { NavLink } from 'react-router-dom';
 const { SubMenu } = Menu;
 const Sidebar = () => {
-   const createMenuLink = (route) => {
+   const createMenuLink = (route:any) => {
     if(route.children && route.children.length) {
       return (
         <SubMenu
@@ -12,7 +12,7 @@ const Sidebar = () => {
           title={route.title}
           // icon={route.icon}
         >
-          {route.children.map((child) => {
+          {route.children.map((child:any) => {
             return (
               <Menu.Item key={child.path}>
                 <NavLink to={child.path}>

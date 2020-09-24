@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route, Redirect  } from 'react-router-dom';
 import menu from './config'
 
-const RouterView = (props) => {
-  const createMenu = (route) => {
+const RouterView = (props:any) => {
+  const createMenu = (route:any) => {
     if(route && route.children && route.children.length) {
       return route.children.map(createMenu)
     } else {

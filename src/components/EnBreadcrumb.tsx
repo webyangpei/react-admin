@@ -3,7 +3,7 @@ import {Breadcrumb } from 'antd';
 import { withRouter } from 'react-router-dom';
 // import { connect } from 'redux';
 
-const filterBreadcrumb = (menu, path) => {
+const filterBreadcrumb = (menu:any, path:any) => {
   const _route = []
   for (let key of menu) {
     if(key.path === path) {
@@ -18,7 +18,7 @@ const filterBreadcrumb = (menu, path) => {
   return _route
 }
 
-const EnBreadcrumb = (props) => {
+const EnBreadcrumb = (props:any) => {
   const { menu, location } = props;
   const _menu = JSON.parse(JSON.stringify(menu));
   let stack = filterBreadcrumb(_menu, location.pathname);
@@ -32,7 +32,7 @@ const EnBreadcrumb = (props) => {
     }
   }
 
-  const createBreadLink = (route) => {
+  const createBreadLink = (route:any) => {
     return (
       <Breadcrumb.Item key={route.path} href={route.redirect ? route.redirect : route.path}>{route.title}</Breadcrumb.Item>
     )

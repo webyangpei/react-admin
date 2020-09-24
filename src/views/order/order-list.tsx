@@ -1,11 +1,13 @@
 import React from 'react';
 
+type IState = {
+    description?: string
+}
 
-class OrderList extends React.Component {
-  constructor(props, state) {
-    super(props);
-    state = {}
-  }
+class OrderList extends React.Component<{}, IState> {
+
+  readonly state = {} as IState
+
   UNSAFE_componentWillMount() {
     this.setState({ description: 'this is a order list page!' })
   }
