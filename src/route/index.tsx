@@ -22,7 +22,6 @@ const RouterView = (props:any) => {
   return (
     <Switch>
       {menu.map(createMenu)}
-      <Route render={() => <Redirect to='/404'/> }/>
     </Switch>
   )
 }
