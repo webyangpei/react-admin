@@ -13,16 +13,7 @@ const {Header, Sider, Content} = Layout;
 
 
 const LayoutInit = (props: any) => {
-    const [menuData, setMenuData] = useState([]);
     const [authorization] = useState(false);
-
-    useEffect(() => {
-        fetch('/api/menu')
-            .then(response => response.json())
-            .then(response => {
-                setMenuData(response.data || []);
-            })
-    }, []);
     // 简单的路由导航守卫
     useEffect(() => {
         NProgress.start()
@@ -50,7 +41,7 @@ const LayoutInit = (props: any) => {
                     <EnBreadcrumb menu={menu}/>
                 </Header>
                 <Content style={{height: 'calc(100vh - 64px)'}}>
-                    <RouterView menuData={menuData}/>
+                    <RouterView/>
                 </Content>
             </Layout>
         </Layout>

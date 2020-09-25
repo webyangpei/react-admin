@@ -1,3 +1,4 @@
+import React from 'react';
 const menu = [
     {
         name: 'dashboard',
@@ -7,7 +8,7 @@ const menu = [
         hideChildrenInMenu: false,
         hideInMenu: false,
         authority: false, // 用来验证当前路由的权限
-        component: require('../views/dashboard').default
+        component: React.lazy(() => import('../views/dashboard'))
     },
     {
         name: 'goods',
@@ -21,7 +22,7 @@ const menu = [
                 path: '/goods/goods-list',
                 icon: 'LaptopOutlined',
                 title: '商品列表',
-                component: require('../views/goods/goods-list').default
+                component: React.lazy(() => import('../views/goods/goods-list'))
             }
         ]
     },
@@ -37,7 +38,7 @@ const menu = [
                 path: '/order/order-list',
                 icon: 'LaptopOutlined',
                 title: '订单列表',
-                component: require('../views/order/order-list').default
+                component: React.lazy(() => import('../views/order/order-list'))
             }
         ]
     },
