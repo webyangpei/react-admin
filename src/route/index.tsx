@@ -21,13 +21,12 @@ const RouterView = () => {
                     key={route.path}
                     path={route.path}
                     render={props => {
-                        return (route && (route.redirect
-                                ? (<Redirect to={route.redirect}/>)
-                                :
-                                <Suspense fallback={Loading}>
-                                    <route.component {...props} routes={route}/>
+                        return route.redirect
+                                ? <Redirect to={route.redirect}/>
+                                : <Suspense fallback={Loading}>
+                                <route.component {...props} routes={route}/>
                                 </Suspense>
-                        ))
+
                     }}
                 />
             )

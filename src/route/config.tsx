@@ -1,4 +1,7 @@
-import React from 'react';
+// import React from 'react';
+import Dashboard from "../views/dashboard";
+import GoodsList from "../views/goods/goods-list";
+import OrderList from "../views/order/order-list";
 const menu = [
     {
         name: 'dashboard',
@@ -8,7 +11,8 @@ const menu = [
         hideChildrenInMenu: false,
         hideInMenu: false,
         authority: false, // 用来验证当前路由的权限
-        component: React.lazy(() => import('../views/dashboard'))
+        component: Dashboard
+        // component: React.lazy(() => import('../views/dashboard'))
     },
     {
         name: 'goods',
@@ -22,7 +26,7 @@ const menu = [
                 path: '/goods/goods-list',
                 icon: 'LaptopOutlined',
                 title: '商品列表',
-                component: React.lazy(() => import('../views/goods/goods-list'))
+                component: GoodsList
             }
         ]
     },
@@ -38,24 +42,9 @@ const menu = [
                 path: '/order/order-list',
                 icon: 'LaptopOutlined',
                 title: '订单列表',
-                component: React.lazy(() => import('../views/order/order-list'))
+                component: OrderList
             }
         ]
-    },
-    {
-        name: 'login',
-        path: '/login',
-        component: '登录'
-    },
-    {
-        name: '404',
-        path: '/404',
-        component: '404'
-    },
-    {
-        name: '500',
-        path: '/500',
-        component: '500'
     }
 ]
 

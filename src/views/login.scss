@@ -10,6 +10,7 @@
 		& > p {
 			padding-top: 200px;
 			color: #fff;
+			text-align: center;
 		}
 		& > form {
 			width: 400px;
@@ -20,5 +21,9 @@
 				text-align: left;
 			}
 		}
+	}
+
+	.ant-form-item-control-input-content {
+		text-align: center;
 	}
 }

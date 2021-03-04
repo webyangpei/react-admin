@@ -3,17 +3,26 @@ import {Layout} from 'antd';
 import RouterView from "../route";
 import Sidebar from './Sidebar'
 import EnBreadcrumb from '../components/EnBreadcrumb';
-import Logo from './Logo'
+import Entool from './entool';
+import Logo from './Logo';
 import { withRouter } from 'react-router-dom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css'
+import './layout.scss'
 import menu from '../route/config'
 
 const {Header, Sider, Content} = Layout;
 
 
-const LayoutInit = (props: any) => {
+type ToDo = {
+    authorization: boolean
+}
+type ToDos = ToDo[];
+
+
+const LayoutInit:React.FC = (props: any) => {
     const [authorization] = useState(false);
+
     // 简单的路由导航守卫
     useEffect(() => {
         NProgress.start()
@@ -26,7 +35,6 @@ const LayoutInit = (props: any) => {
             replace('/index');
             NProgress.done();
         }
-        console.log(props.location.pathname, 555555);
         NProgress.done();
     }, [props, authorization])
 
@@ -39,6 +47,7 @@ const LayoutInit = (props: any) => {
             <Layout>
                 <Header style={{background: '#fff'}}>
                     <EnBreadcrumb menu={menu}/>
+                    <Entool authorization={authorization} />
                 </Header>
                 <Content style={{height: 'calc(100vh - 64px)'}}>
                     <RouterView/>
